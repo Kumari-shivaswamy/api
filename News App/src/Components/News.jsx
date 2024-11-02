@@ -10,15 +10,15 @@ const News = () => {
 },[]);
   
   return (
-    <div className='news-grid'>
      {articles.map((news,index)=>{
-      return <NewsDetails
+      return news.description&& news.urlToImage? <NewsDetails
       key={index}
       author={news.author}
       title={news.title}
       description={news.description}
       src={news.urlToImage}
-      url={news.url}/>
+      url={news.url}/> : <></> 
+      
      })}
     </div>
   )
